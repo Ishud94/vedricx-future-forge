@@ -5,7 +5,6 @@ import { ArrowRight, GraduationCap, Cpu } from "lucide-react";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
-    {/* Background gradient orbs */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl" />
@@ -20,7 +19,7 @@ const HeroSection = () => (
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted-foreground mb-8">
             <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-            Engineering Education & AI Solutions
+            Engineering Education & AI-Powered Business Systems
           </div>
         </motion.div>
 
@@ -40,8 +39,8 @@ const HeroSection = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Industry-grade engineering programs and AI-powered business solutions — 
-          all under one roof. From aircraft design to intelligent automation.
+          Industry-grade engineering apprenticeships in Aircraft Design, CFD & FEA — 
+          plus AI-powered business systems that centralize operations, automate workflows, and drive data-driven decisions.
         </motion.p>
 
         <motion.div
@@ -65,7 +64,6 @@ const HeroSection = () => (
           </Button>
         </motion.div>
 
-        {/* Stats */}
         <motion.div
           className="grid grid-cols-3 gap-8 max-w-lg mx-auto mt-20"
           initial={{ opacity: 0 }}
