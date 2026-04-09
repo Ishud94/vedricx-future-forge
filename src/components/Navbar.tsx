@@ -18,10 +18,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-hero-gradient" />
-          <span className="font-heading text-xl font-bold text-foreground">
-            VedricX<span className="text-primary"> Global</span>
-          </span>
+          <img src="/images/vedricx-logo.png" alt="VedricX Global" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop */}

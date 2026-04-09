@@ -1,46 +1,67 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Bot, BarChart3, Workflow, MessageSquare, Database, Shield, ArrowRight } from "lucide-react";
+import { Bot, BarChart3, Workflow, Database, Shield, Layers, ArrowRight, CheckCircle } from "lucide-react";
 
 const services = [
   {
+    icon: Layers,
+    title: "Data Intelligence Layer",
+    description: "Transform raw business data into meaningful insights. Data cleaning, visualization through dashboards, trend analysis, and predictive modeling for forecasting outcomes.",
+  },
+  {
+    icon: Database,
+    title: "Business System Development",
+    description: "Build the core system that manages all operations — CRM systems, admin dashboards, database systems for structured storage, and API integrations for connecting external tools.",
+  },
+  {
     icon: Bot,
-    title: "AI Chatbots & Assistants",
-    description: "Custom AI chatbots for customer support, lead qualification, and internal operations. Trained on your business data.",
+    title: "AI & Automation",
+    description: "Add intelligence and reduce manual workload — lead scoring, predictive analytics, automated follow-ups and notifications, and AI chatbots for customer interaction.",
+  },
+  {
+    icon: BarChart3,
+    title: "Centralized Dashboards",
+    description: "Complete visibility across all operations with real-time dashboards that turn scattered data into actionable, decision-ready insights.",
   },
   {
     icon: Workflow,
     title: "Workflow Automation",
-    description: "End-to-end automation for lead capture, onboarding, follow-ups, and data processing pipelines.",
-  },
-  {
-    icon: BarChart3,
-    title: "Business Intelligence Dashboards",
-    description: "Real-time dashboards that turn raw data into actionable insights for smarter decisions.",
-  },
-  {
-    icon: MessageSquare,
-    title: "WhatsApp & Email Automation",
-    description: "Automated messaging sequences for nurturing leads, student communications, and customer engagement.",
-  },
-  {
-    icon: Database,
-    title: "Custom CRM & Data Systems",
-    description: "Tailored CRM solutions with lead scoring, pipeline management, and analytics built in.",
+    description: "End-to-end automation for lead capture, onboarding, follow-ups, and data processing — eliminating manual tracking and reducing errors.",
   },
   {
     icon: Shield,
-    title: "System Integration & Security",
-    description: "Seamless integration of existing tools with robust security and data protection practices.",
+    title: "Cloud Deployment & Support",
+    description: "Deployment on cloud infrastructure with ongoing support and performance optimization to ensure systems scale with your business.",
   },
 ];
 
+const problems = [
+  "Disorganized data across Excel, WhatsApp, and CRMs",
+  "Heavy reliance on manual tracking and follow-ups",
+  "Lack of real-time insights for decision-making",
+  "Absence of intelligent systems that predict outcomes",
+];
+
+const outcomes = [
+  "Increased operational efficiency",
+  "Higher conversion rates and revenue growth",
+  "Reduced manual effort and errors",
+  "Better strategic planning through data insights",
+];
+
 const process = [
-  { step: "01", title: "Discovery", description: "We analyze your business needs, workflows, and pain points." },
-  { step: "02", title: "Design", description: "We architect a custom solution tailored to your requirements." },
-  { step: "03", title: "Build", description: "Our team develops and tests the system with your feedback." },
-  { step: "04", title: "Deploy & Scale", description: "We launch, monitor, and iterate to ensure maximum impact." },
+  { step: "01", title: "Requirement Analysis", description: "Understanding your business needs, workflows, and pain points in depth." },
+  { step: "02", title: "System Design", description: "Architecture planning and solution design tailored to your requirements." },
+  { step: "03", title: "Development & Integration", description: "Building and integrating features with your feedback at every stage." },
+  { step: "04", title: "Deploy & Optimize", description: "Cloud deployment with ongoing support and continuous performance optimization." },
+];
+
+const targets = [
+  "Startups and SMEs",
+  "Coaching institutes & educational platforms",
+  "Real estate & service-based businesses",
+  "Healthcare and consulting firms",
 ];
 
 const Services = () => (
@@ -54,15 +75,49 @@ const Services = () => (
       >
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted-foreground mb-6">
           <Bot className="h-4 w-4" />
-          AI & IT Solutions
+          AI-Powered Business Systems
         </div>
         <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
           Build Your <span className="text-gradient">Intelligent System</span>
         </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-          From AI chatbots to full-scale business automation — we design, build, and deploy systems that grow with your business.
+          Vedricx Global integrates full stack development, data science, and AI into unified solutions that transform business operations — making them efficient, automated, and insight-driven.
         </p>
       </motion.div>
+
+      {/* Problem / Solution */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+        <motion.div
+          className="rounded-xl border border-destructive/20 bg-destructive/5 p-8"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="font-heading text-xl font-bold mb-4 text-destructive">The Problem</h3>
+          <ul className="space-y-3">
+            {problems.map((p) => (
+              <li key={p} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <span className="text-destructive mt-0.5">✕</span> {p}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+        <motion.div
+          className="rounded-xl border border-accent/20 bg-accent/5 p-8"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="font-heading text-xl font-bold mb-4 text-accent">The Outcome</h3>
+          <ul className="space-y-3">
+            {outcomes.map((o) => (
+              <li key={o} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <CheckCircle className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" /> {o}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
 
       {/* Services grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
@@ -86,14 +141,13 @@ const Services = () => (
 
       {/* Process */}
       <motion.div
-        className="mb-16"
+        className="mb-20"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
       >
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">
-          Our <span className="text-gradient">Process</span>
+          Implementation <span className="text-gradient">Approach</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {process.map((item, i) => (
@@ -103,12 +157,29 @@ const Services = () => (
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
+              transition={{ delay: i * 0.1 }}
             >
               <span className="font-heading text-5xl font-bold text-primary/10">{item.step}</span>
               <h3 className="font-heading text-lg font-semibold mt-2 mb-2">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.description}</p>
             </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Target Audience */}
+      <motion.div
+        className="rounded-xl bg-card border border-border p-8 md:p-12 mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h3 className="font-heading text-2xl font-bold mb-6 text-center">Who We Build For</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {targets.map((t) => (
+            <div key={t} className="text-center p-4 rounded-lg bg-secondary">
+              <span className="text-sm font-medium text-secondary-foreground">{t}</span>
+            </div>
           ))}
         </div>
       </motion.div>

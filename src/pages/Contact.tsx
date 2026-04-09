@@ -14,7 +14,6 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission
     setTimeout(() => {
       toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
       setForm({ name: "", email: "", phone: "", interest: "", message: "" });
@@ -35,12 +34,11 @@ const Contact = () => {
             Let's <span className="text-gradient">Connect</span>
           </h1>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-            Whether you're interested in our programs or need a custom AI solution — we'd love to hear from you.
+            Whether you're interested in our apprenticeship programs or need an AI-powered business system — we'd love to hear from you.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -50,35 +48,17 @@ const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Name</label>
-                  <Input
-                    required
-                    maxLength={100}
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Your name"
-                  />
+                  <Input required maxLength={100} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
-                  <Input
-                    required
-                    type="email"
-                    maxLength={255}
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="you@example.com"
-                  />
+                  <Input required type="email" maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Phone</label>
-                  <Input
-                    value={form.phone}
-                    maxLength={20}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="+91 99999 99999"
-                  />
+                  <Input value={form.phone} maxLength={20} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+91 99999 99999" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">I'm interested in</label>
@@ -88,23 +68,18 @@ const Contact = () => {
                     onChange={(e) => setForm({ ...form, interest: e.target.value })}
                   >
                     <option value="">Select an option</option>
-                    <option value="programs">Engineering Programs</option>
+                    <option value="aircraft-design">Aircraft Design & Simulation</option>
+                    <option value="cfd">CFD Apprenticeship</option>
+                    <option value="fea">FEA Apprenticeship</option>
                     <option value="ai-solutions">AI / IT Solutions</option>
-                    <option value="both">Both</option>
+                    <option value="both">Programs + Solutions</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium text-foreground mb-1.5 block">Message</label>
-                <Textarea
-                  required
-                  maxLength={1000}
-                  rows={5}
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  placeholder="Tell us about your needs..."
-                />
+                <Textarea required maxLength={1000} rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your needs..." />
               </div>
               <Button type="submit" size="lg" className="w-full" disabled={loading}>
                 <Send className="mr-2 h-4 w-4" />
@@ -113,7 +88,6 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Contact info */}
           <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: 20 }}
@@ -138,7 +112,7 @@ const Contact = () => {
                   </div>
                 </a>
                 <a
-                  href="mailto:hello@vedricx.com"
+                  href="mailto:info@vedricxglobal.com"
                   className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
                 >
                   <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -146,7 +120,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Email</div>
-                    <div className="text-sm text-muted-foreground">hello@vedricx.com</div>
+                    <div className="text-sm text-muted-foreground">info@vedricxglobal.com</div>
                   </div>
                 </a>
                 <div className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card">
@@ -155,7 +129,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Phone</div>
-                    <div className="text-sm text-muted-foreground">+91 99999 99999</div>
+                    <div className="text-sm text-muted-foreground">Contact us for a consultation</div>
                   </div>
                 </div>
               </div>
