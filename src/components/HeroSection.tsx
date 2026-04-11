@@ -39,7 +39,7 @@ const HeroSection = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Industry-grade engineering apprenticeships in Aircraft Design, CFD & FEA — 
+          Industry-grade industrial training programs in Aircraft Design, CFD & FEA — 
           plus AI-powered business systems that centralize operations, automate workflows, and drive data-driven decisions.
         </motion.p>
 
