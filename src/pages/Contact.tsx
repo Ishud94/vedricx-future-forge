@@ -34,7 +34,7 @@ const Contact = () => {
             Let's <span className="text-gradient">Connect</span>
           </h1>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-            Whether you're interested in our apprenticeship programs or need an AI-powered business system — we'd love to hear from you.
+            Whether you're interested in our industrial training programs or need an AI-powered business system — we'd love to hear from you.
           </p>
         </motion.div>
 
@@ -69,8 +69,8 @@ const Contact = () => {
                   >
                     <option value="">Select an option</option>
                     <option value="aircraft-design">Aircraft Design & Simulation</option>
-                    <option value="cfd">CFD Apprenticeship</option>
-                    <option value="fea">FEA Apprenticeship</option>
+                    <option value="cfd">CFD Industrial Training</option>
+                    <option value="fea">FEA Industrial Training</option>
                     <option value="ai-solutions">AI / IT Solutions</option>
                     <option value="both">Programs + Solutions</option>
                     <option value="other">Other</option>

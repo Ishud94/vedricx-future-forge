@@ -17,8 +17,8 @@ const Footer = () => (
           <h4 className="font-heading font-semibold mb-4">Programs</h4>
           <ul className="space-y-2 text-sm opacity-70">
             <li><Link to="/programs" className="hover:opacity-100 transition-opacity">Aircraft Design & Simulation</Link></li>
-            <li><Link to="/programs" className="hover:opacity-100 transition-opacity">CFD Apprenticeship</Link></li>
-            <li><Link to="/programs" className="hover:opacity-100 transition-opacity">FEA Apprenticeship</Link></li>
+            <li><Link to="/programs" className="hover:opacity-100 transition-opacity">CFD Industrial Training</Link></li>
+            <li><Link to="/programs" className="hover:opacity-100 transition-opacity">FEA Industrial Training</Link></li>
           </ul>
         </div>
 
