@@ -27,7 +27,7 @@ const CTASection = () => (
                 View Programs
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-base px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild size="lg" variant="secondary" className="text-base px-8">
               <Link to="/contact">
                 Talk to Us <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

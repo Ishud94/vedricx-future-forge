@@ -5,10 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MessageSquare, Mail, Phone, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import PhoneInput from "@/components/PhoneInput";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", interest: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", countryCode: "+91", phone: "", interest: "", message: "" });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -16,7 +17,7 @@ const Contact = () => {
     setLoading(true);
     setTimeout(() => {
       toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
-      setForm({ name: "", email: "", phone: "", interest: "", message: "" });
+      setForm({ name: "", email: "", countryCode: "+91", phone: "", interest: "", message: "" });
       setLoading(false);
     }, 1000);
   };
@@ -57,8 +58,14 @@ const Contact = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Phone</label>
-                  <Input value={form.phone} maxLength={20} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+91 99999 99999" />
+                  <label className="text-sm font-medium text-foreground mb-1.5 block">Phone <span className="text-destructive">*</span></label>
+                  <PhoneInput
+                    countryCode={form.countryCode}
+                    phone={form.phone}
+                    onCountryCodeChange={(v) => setForm({ ...form, countryCode: v })}
+                    onPhoneChange={(v) => setForm({ ...form, phone: v })}
+                    required
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">I'm interested in</label>
