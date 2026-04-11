@@ -2,18 +2,25 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Award, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { Clock, Users, Award, ArrowRight, ChevronDown, ChevronUp, Star, MessageSquare } from "lucide-react";
+import aircraftImg from "@/assets/course-aircraft-design.jpg";
+import cfdImg from "@/assets/course-cfd.jpg";
+import feaImg from "@/assets/course-fea.jpg";
 
 const programs = [
   {
-    title: "Advanced Aircraft Design & Simulation Internship",
+    title: "Advanced Aircraft Design & Simulation",
     subtitle: "From Concept to Complete 3D Aircraft Modeling & Simulation",
-    description: "This industry-oriented internship trains students in conceptual aircraft modeling and simulation workflows used in aerospace industries. Emphasizes real aircraft component modeling, surface-based aerodynamic design, full aircraft assembly development, and simulation-based validation.",
+    description: "This industry-oriented program trains students in conceptual aircraft modeling and simulation workflows used in aerospace industries. Emphasizes real aircraft component modeling, surface-based aerodynamic design, full aircraft assembly development, and simulation-based validation.",
     duration: "12 Weeks",
     level: "Beginner to Intermediate",
     software: "CATIA V5 | ANSYS Workbench",
     mode: "Online – Live + Recorded + Project-Based",
     audience: "Engineering Students",
+    fee: "₹14,999",
+    rating: 4.8,
+    reviewCount: 124,
+    image: aircraftImg,
     roles: ["Junior Aircraft Design Engineer", "CAD/CAM Engineer", "Aerospace Design Analyst", "Structural Analyst (Trainee)"],
     modules: [
       { week: "Week 1", title: "Aircraft Design Foundations", topics: ["Aircraft classifications & components", "Aerodynamics & flight mechanics", "Airfoil terminology & NACA series", "Structures, materials & composites", "Propulsion systems & certification basics"] },
@@ -25,18 +32,22 @@ const programs = [
       { week: "Week 8", title: "Introduction to ANSYS Simulation", topics: ["Geometry import from CATIA", "Meshing fundamentals & boundary conditions", "Airfoil aerodynamic analysis", "Lift & drag extraction", "Wing structural load analysis"] },
       { week: "Weeks 9-12", title: "Capstone Aircraft Design Project", topics: ["Design a complete aircraft", "Aerodynamic validation & structural assessment", "Design improvement based on simulation", "Final technical report & engineering presentation"] },
     ],
-    deliverables: ["Complete 3D Aircraft Model (CATIA)", "ANSYS Simulation Files", "Technical Project Report", "Engineering Presentation", "Internship Certificate"],
+    deliverables: ["Complete 3D Aircraft Model (CATIA)", "ANSYS Simulation Files", "Technical Project Report", "Engineering Presentation", "Certificate"],
     skills: ["Aircraft 3D Modeling Expertise", "Surface Design Proficiency", "CAD Assembly & Drafting", "Basic CFD & FEA Exposure", "Engineering Interpretation Skills"],
   },
   {
-    title: "Project-Based CFD Apprenticeship Program",
+    title: "Project-Based CFD Industrial Training Program",
     subtitle: "From Fundamentals to Industrial Applications",
     description: "A structured program taking learners from CFD fundamentals to advanced applications through hands-on simulations using ANSYS Fluent and ICEM CFD. Covers fluid flow fundamentals, numerical methods via MATLAB, meshing strategies, turbulence modeling, and advanced CFD applications.",
     duration: "6 Modules (12+ Weeks)",
     level: "Beginner to Advanced",
     software: "ANSYS Fluent | ICEM CFD | MATLAB",
     mode: "Online – Live + Project-Based",
-    audience: "Engineering students & fresh graduates (Mechanical, Aerospace, Automotive)",
+    audience: "Mechanical, Aerospace, Automotive Students",
+    fee: "₹12,999",
+    rating: 4.7,
+    reviewCount: 98,
+    image: cfdImg,
     roles: ["CFD Engineer (Graduate / Trainee)", "CFD Application Engineer", "Aerodynamics Engineer (Junior)", "Thermal / Heat Transfer CFD Engineer", "CFD Analyst (Automotive & Aerospace)"],
     modules: [
       { week: "Module 1", title: "Fundamentals of Fluid Flow & CFD", topics: ["Fluid properties & governing equations", "Newtonian & non-Newtonian fluids", "Laminar vs turbulent flows & Reynolds number", "Introduction to CFD workflow", "Projects: 2D & 3D Laminar Flow Analysis"] },
@@ -50,14 +61,18 @@ const programs = [
     skills: ["CFD workflow (pre to post-processing)", "Internal & external flow simulation", "Surface & volume meshing (ICEM CFD)", "Turbulence modeling (RANS)", "Numerical methods via MATLAB"],
   },
   {
-    title: "Project-Based FEA Apprenticeship Program",
+    title: "Project-Based FEA Industrial Training Program",
     subtitle: "From Solid Mechanics to Industry-Grade Structural Simulation",
     description: "Train in industry-relevant structural simulation workflows used in mechanical, automotive, aerospace, and manufacturing sectors. Emphasizes engineering decision-making, model validation, solver behavior understanding, and result interpretation using ANSYS Mechanical.",
     duration: "12 Weeks (3 Months)",
     level: "Intermediate",
     software: "ANSYS Workbench – Mechanical",
-    mode: "Industry-Oriented Apprenticeship",
-    audience: "Final-year students, fresh graduates, and early-career engineers",
+    mode: "Industry-Oriented Training",
+    audience: "Final-year students, fresh graduates, early-career engineers",
+    fee: "₹11,999",
+    rating: 4.6,
+    reviewCount: 76,
+    image: feaImg,
     roles: ["Junior / Graduate FEA Engineer", "CAE Analyst (Structural)", "Mechanical Design Engineer with FEA", "Structural Analyst (Trainee / Entry Level)"],
     modules: [
       { week: "Week 1", title: "Solid Mechanics Fundamentals for FEA", topics: ["Stress & strain physical interpretation", "Elastic vs plastic behavior", "Engineering vs true stress–strain", "Task: Uniaxial Tensile Test Simulation"] },
@@ -71,10 +86,38 @@ const programs = [
       { week: "Week 10", title: "Fatigue & Durability Analysis", topics: ["High-cycle fatigue & S–N curves", "Mean stress correction", "Task: Fatigue Life of Rotating Shaft"] },
       { week: "Weeks 11-12", title: "Capstone Industry Project", topics: ["End-to-end structural analysis", "Geometry simplification & BC justification", "Mesh convergence & failure assessment", "Design improvement recommendations", "Complete FEA report & presentation"] },
     ],
-    deliverables: ["Complete FEA Technical Report", "ANSYS Project Files", "Engineering Presentation", "Apprenticeship Certificate"],
+    deliverables: ["Complete FEA Technical Report", "ANSYS Project Files", "Engineering Presentation", "Certificate"],
     skills: ["Structural FEA workflow proficiency", "Linear & nonlinear analysis", "Contact & fatigue analysis", "Engineering judgment & validation", "Industry-style reporting"],
   },
 ];
+
+const StarRating = ({ rating, count }: { rating: number; count: number }) => (
+  <div className="flex items-center gap-2">
+    <div className="flex gap-0.5">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <Star
+          key={i}
+          className={`h-4 w-4 ${
+            i <= Math.floor(rating)
+              ? "fill-yellow-400 text-yellow-400"
+              : i - 0.5 <= rating
+              ? "fill-yellow-400/50 text-yellow-400"
+              : "text-muted-foreground/30"
+          }`}
+        />
+      ))}
+    </div>
+    <span className="text-sm font-semibold">{rating}</span>
+    <span className="text-xs text-muted-foreground">({count} reviews)</span>
+  </div>
+);
+
+const GraduationCapIcon = () => (
+  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+    <path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5" />
+  </svg>
+);
 
 const Programs = () => {
   const [expanded, setExpanded] = useState<number | null>(null);
@@ -90,17 +133,17 @@ const Programs = () => {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted-foreground mb-6">
             <GraduationCapIcon />
-            Engineering Apprenticeship Programs
+            Engineering Industrial Training Programs
           </div>
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
             Industry-Grade <span className="text-gradient">Training Programs</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Project-driven apprenticeships designed by industry professionals. Learn real tools, solve real problems, and build a portfolio that gets you hired.
+            Project-driven industrial training programs designed by industry professionals. Learn real tools, solve real problems, and build a portfolio that gets you hired.
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-10">
           {programs.map((program, i) => (
             <motion.div
               key={program.title}
@@ -109,6 +152,27 @@ const Programs = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.15 }}
             >
+              {/* Course image */}
+              <div className="relative h-48 md:h-56 overflow-hidden">
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  loading="lazy"
+                  width={800}
+                  height={512}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+                <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+                  <div>
+                    <StarRating rating={program.rating} count={program.reviewCount} />
+                  </div>
+                  <div className="rounded-lg bg-primary px-4 py-2 text-primary-foreground font-heading font-bold text-lg">
+                    {program.fee}
+                  </div>
+                </div>
+              </div>
+
               <div className="p-8 md:p-10">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   <div className="flex-1">
@@ -131,7 +195,6 @@ const Programs = () => {
                       )}
                     </div>
 
-                    {/* Roles */}
                     <div className="mb-4">
                       <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Prepares You For:</span>
                       <div className="flex flex-wrap gap-2 mt-2">
@@ -141,7 +204,6 @@ const Programs = () => {
                       </div>
                     </div>
 
-                    {/* Expandable syllabus */}
                     <button
                       onClick={() => setExpanded(expanded === i ? null : i)}
                       className="flex items-center gap-2 text-sm font-medium text-primary hover:underline mt-2"
@@ -201,11 +263,16 @@ const Programs = () => {
                     )}
                   </div>
 
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 flex flex-col gap-3">
                     <Button asChild size="lg">
                       <Link to="/contact">
-                        Enroll Now <ArrowRight className="ml-2 h-4 w-4" />
+                        <MessageSquare className="mr-2 h-4 w-4" /> Contact Us
                       </Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline">
+                      <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
+                        Get Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -217,12 +284,5 @@ const Programs = () => {
     </main>
   );
 };
-
-const GraduationCapIcon = () => (
-  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-    <path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5" />
-  </svg>
-);
 
 export default Programs;
