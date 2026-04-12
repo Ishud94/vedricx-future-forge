@@ -2,37 +2,47 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Bot, BarChart3, Workflow, Database, Shield, Layers, ArrowRight, CheckCircle } from "lucide-react";
+import serviceDataImg from "@/assets/service-data-intelligence.jpg";
+import serviceBusinessImg from "@/assets/service-business-system.jpg";
+import serviceAiImg from "@/assets/service-ai-automation.jpg";
+import serviceCloudImg from "@/assets/service-cloud-deploy.jpg";
 
 const services = [
   {
     icon: Layers,
     title: "Data Intelligence Layer",
     description: "Transform raw business data into meaningful insights. Data cleaning, visualization through dashboards, trend analysis, and predictive modeling for forecasting outcomes.",
+    image: serviceDataImg,
   },
   {
     icon: Database,
     title: "Business System Development",
     description: "Build the core system that manages all operations — CRM systems, admin dashboards, database systems for structured storage, and API integrations for connecting external tools.",
+    image: serviceBusinessImg,
   },
   {
     icon: Bot,
     title: "AI & Automation",
     description: "Add intelligence and reduce manual workload — lead scoring, predictive analytics, automated follow-ups and notifications, and AI chatbots for customer interaction.",
+    image: serviceAiImg,
   },
   {
     icon: BarChart3,
     title: "Centralized Dashboards",
     description: "Complete visibility across all operations with real-time dashboards that turn scattered data into actionable, decision-ready insights.",
+    image: serviceDataImg,
   },
   {
     icon: Workflow,
     title: "Workflow Automation",
     description: "End-to-end automation for lead capture, onboarding, follow-ups, and data processing — eliminating manual tracking and reducing errors.",
+    image: serviceBusinessImg,
   },
   {
     icon: Shield,
     title: "Cloud Deployment & Support",
     description: "Deployment on cloud infrastructure with ongoing support and performance optimization to ensure systems scale with your business.",
+    image: serviceCloudImg,
   },
 ];
 
@@ -124,17 +134,22 @@ const Services = () => (
         {services.map((service, i) => (
           <motion.div
             key={service.title}
-            className="group p-6 rounded-xl border border-border bg-card hover:border-accent/30 hover:glow-accent transition-all duration-300"
+            className="group rounded-xl border border-border bg-card hover:border-accent/30 hover:glow-accent transition-all duration-300 overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
           >
-            <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-              <service.icon className="h-6 w-6 text-accent" />
+            <div className="h-40 overflow-hidden">
+              <img src={service.image} alt={service.title} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 className="font-heading text-lg font-semibold mb-2">{service.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+            <div className="p-6">
+              <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
+                <service.icon className="h-5 w-5 text-accent" />
+              </div>
+              <h3 className="font-heading text-lg font-semibold mb-2">{service.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+            </div>
           </motion.div>
         ))}
       </div>
