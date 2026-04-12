@@ -17,7 +17,7 @@ const Contact = () => {
     setLoading(true);
     setTimeout(() => {
       toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
-      setForm({ name: "", email: "", countryCode: "+91", phone: "", interest: "", message: "" });
+      setForm({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
       setLoading(false);
     }, 1000);
   };
