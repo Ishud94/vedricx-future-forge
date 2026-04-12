@@ -2,37 +2,47 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Bot, BarChart3, Workflow, Database, Shield, Layers, ArrowRight, CheckCircle } from "lucide-react";
+import serviceDataImg from "@/assets/service-data-intelligence.jpg";
+import serviceBusinessImg from "@/assets/service-business-system.jpg";
+import serviceAiImg from "@/assets/service-ai-automation.jpg";
+import serviceCloudImg from "@/assets/service-cloud-deploy.jpg";
 
 const services = [
   {
     icon: Layers,
     title: "Data Intelligence Layer",
     description: "Transform raw business data into meaningful insights. Data cleaning, visualization through dashboards, trend analysis, and predictive modeling for forecasting outcomes.",
+    image: serviceDataImg,
   },
   {
     icon: Database,
     title: "Business System Development",
     description: "Build the core system that manages all operations — CRM systems, admin dashboards, database systems for structured storage, and API integrations for connecting external tools.",
+    image: serviceBusinessImg,
   },
   {
     icon: Bot,
     title: "AI & Automation",
     description: "Add intelligence and reduce manual workload — lead scoring, predictive analytics, automated follow-ups and notifications, and AI chatbots for customer interaction.",
+    image: serviceAiImg,
   },
   {
     icon: BarChart3,
     title: "Centralized Dashboards",
     description: "Complete visibility across all operations with real-time dashboards that turn scattered data into actionable, decision-ready insights.",
+    image: serviceDataImg,
   },
   {
     icon: Workflow,
     title: "Workflow Automation",
     description: "End-to-end automation for lead capture, onboarding, follow-ups, and data processing — eliminating manual tracking and reducing errors.",
+    image: serviceBusinessImg,
   },
   {
     icon: Shield,
     title: "Cloud Deployment & Support",
     description: "Deployment on cloud infrastructure with ongoing support and performance optimization to ensure systems scale with your business.",
+    image: serviceCloudImg,
   },
 ];
 
