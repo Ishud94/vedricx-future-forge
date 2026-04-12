@@ -65,10 +65,10 @@ const outcomes = [
 ];
 
 const process = [
-  { step: "01", title: "Requirement Analysis", description: "Understanding your business needs, workflows, and pain points in depth." },
-  { step: "02", title: "System Design", description: "Architecture planning and solution design tailored to your requirements." },
-  { step: "03", title: "Development & Integration", description: "Building and integrating features with your feedback at every stage." },
-  { step: "04", title: "Deploy & Optimize", description: "Cloud deployment with ongoing support and continuous performance optimization." },
+  { step: "01", title: "Requirement Analysis", description: "Understanding your business needs, workflows, and pain points in depth.", image: processRequirementImg },
+  { step: "02", title: "System Design", description: "Architecture planning and solution design tailored to your requirements.", image: processDesignImg },
+  { step: "03", title: "Development & Integration", description: "Building and integrating features with your feedback at every stage.", image: processDevelopmentImg },
+  { step: "04", title: "Deploy & Optimize", description: "Cloud deployment with ongoing support and continuous performance optimization.", image: processDeployImg },
 ];
 
 const targets = [
