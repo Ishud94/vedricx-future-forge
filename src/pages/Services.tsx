@@ -134,17 +134,22 @@ const Services = () => (
         {services.map((service, i) => (
           <motion.div
             key={service.title}
-            className="group p-6 rounded-xl border border-border bg-card hover:border-accent/30 hover:glow-accent transition-all duration-300"
+            className="group rounded-xl border border-border bg-card hover:border-accent/30 hover:glow-accent transition-all duration-300 overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
           >
-            <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-              <service.icon className="h-6 w-6 text-accent" />
+            <div className="h-40 overflow-hidden">
+              <img src={service.image} alt={service.title} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 className="font-heading text-lg font-semibold mb-2">{service.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+            <div className="p-6">
+              <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
+                <service.icon className="h-5 w-5 text-accent" />
+              </div>
+              <h3 className="font-heading text-lg font-semibold mb-2">{service.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+            </div>
           </motion.div>
         ))}
       </div>
