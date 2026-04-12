@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Bot, BarChart3, Workflow, Database, Shield, Layers, ArrowRight, CheckCircle } from "lucide-react";
+import { Bot, BarChart3, Workflow, Database, Shield, Layers, ArrowRight, CheckCircle, HelpCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import serviceDataImg from "@/assets/service-data-intelligence.jpg";
 import serviceBusinessImg from "@/assets/service-business-system.jpg";
 import serviceAiImg from "@/assets/service-ai-automation.jpg";
@@ -76,6 +77,15 @@ const targets = [
   "Coaching institutes & educational platforms",
   "Real estate & service-based businesses",
   "Healthcare and consulting firms",
+];
+
+const faqs = [
+  { q: "How long does it take to build a custom system?", a: "Timelines vary based on complexity. A basic CRM or dashboard takes 4–6 weeks, while a full-stack intelligent system with AI integrations typically takes 8–12 weeks." },
+  { q: "Do I need technical knowledge to use the system?", a: "Not at all. We build intuitive interfaces designed for non-technical users. We also provide training and documentation so your team can operate everything confidently." },
+  { q: "Can you integrate with tools we already use?", a: "Yes. We specialize in API integrations and can connect your new system with existing tools like Google Workspace, WhatsApp, payment gateways, and third-party CRMs." },
+  { q: "What happens after the system is deployed?", a: "We provide ongoing support, performance monitoring, and optimization. As your business grows, we scale and enhance the system to match new requirements." },
+  { q: "Is my data secure?", a: "Absolutely. We follow industry-standard security practices including encryption, role-based access control, and secure cloud deployment to protect your business data." },
+  { q: "How much does a custom system cost?", a: "Every project is unique. We offer a free consultation to understand your needs and provide a transparent, tailored quote — no hidden charges." },
 ];
 
 const Services = () => (
@@ -205,6 +215,31 @@ const Services = () => (
               <span className="text-sm font-medium text-secondary-foreground">{t}</span>
             </div>
           ))}
+        </div>
+      </motion.div>
+
+      {/* FAQ */}
+      <motion.div
+        className="mb-20"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <div className="flex items-center justify-center gap-3 mb-10">
+          <HelpCircle className="h-6 w-6 text-accent" />
+          <h2 className="font-heading text-3xl md:text-4xl font-bold">
+            Frequently Asked <span className="text-gradient">Questions</span>
+          </h2>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl border border-border bg-card px-6">
+                <AccordionTrigger className="text-left font-medium hover:no-underline">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </motion.div>
 
