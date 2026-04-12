@@ -9,7 +9,7 @@ import PhoneInput from "@/components/PhoneInput";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", countryCode: "+91", phone: "", interest: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -17,7 +17,7 @@ const Contact = () => {
     setLoading(true);
     setTimeout(() => {
       toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
-      setForm({ name: "", email: "", countryCode: "+91", phone: "", interest: "", message: "" });
+      setForm({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
       setLoading(false);
     }, 1000);
   };

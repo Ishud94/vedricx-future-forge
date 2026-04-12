@@ -15,7 +15,7 @@ const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
-  const [countryCode, setCountryCode] = useState("+91");
+  const [countryCode, setCountryCode] = useState("+91-IN");
   const [phone, setPhone] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -42,7 +42,7 @@ const Auth = () => {
           email,
           password,
           options: {
-            data: { full_name: fullName, phone: `${countryCode}${phone}` },
+            data: { full_name: fullName, phone: `${countryCode.split("-")[0]}${phone}` },
             emailRedirectTo: window.location.origin,
           },
         });
