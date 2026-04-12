@@ -42,7 +42,7 @@ const Auth = () => {
           email,
           password,
           options: {
-            data: { full_name: fullName, phone: `${countryCode}${phone}` },
+            data: { full_name: fullName, phone: `${countryCode.split("-")[0]}${phone}` },
             emailRedirectTo: window.location.origin,
           },
         });
