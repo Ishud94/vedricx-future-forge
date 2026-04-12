@@ -172,14 +172,21 @@ const Services = () => (
           {process.map((item, i) => (
             <motion.div
               key={item.step}
-              className="relative p-6 rounded-xl bg-card border border-border"
+              className="relative rounded-xl bg-card border border-border overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <span className="font-heading text-5xl font-bold text-primary/10">{item.step}</span>
-              <h3 className="font-heading text-lg font-semibold mt-2 mb-2">{item.title}</h3>
+              <div className="h-36 overflow-hidden">
+                <img src={item.image} alt={item.title} loading="lazy" width={800} height={512} className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6">
+                <span className="font-heading text-5xl font-bold text-primary/10">{item.step}</span>
+                <h3 className="font-heading text-lg font-semibold mt-2 mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            </motion.div>
               <p className="text-sm text-muted-foreground">{item.description}</p>
             </motion.div>
           ))}
