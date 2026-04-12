@@ -6,6 +6,10 @@ import serviceDataImg from "@/assets/service-data-intelligence.jpg";
 import serviceBusinessImg from "@/assets/service-business-system.jpg";
 import serviceAiImg from "@/assets/service-ai-automation.jpg";
 import serviceCloudImg from "@/assets/service-cloud-deploy.jpg";
+import processRequirementImg from "@/assets/process-requirement.jpg";
+import processDesignImg from "@/assets/process-design.jpg";
+import processDevelopmentImg from "@/assets/process-development.jpg";
+import processDeployImg from "@/assets/process-deploy.jpg";
 
 const services = [
   {
@@ -61,10 +65,10 @@ const outcomes = [
 ];
 
 const process = [
-  { step: "01", title: "Requirement Analysis", description: "Understanding your business needs, workflows, and pain points in depth." },
-  { step: "02", title: "System Design", description: "Architecture planning and solution design tailored to your requirements." },
-  { step: "03", title: "Development & Integration", description: "Building and integrating features with your feedback at every stage." },
-  { step: "04", title: "Deploy & Optimize", description: "Cloud deployment with ongoing support and continuous performance optimization." },
+  { step: "01", title: "Requirement Analysis", description: "Understanding your business needs, workflows, and pain points in depth.", image: processRequirementImg },
+  { step: "02", title: "System Design", description: "Architecture planning and solution design tailored to your requirements.", image: processDesignImg },
+  { step: "03", title: "Development & Integration", description: "Building and integrating features with your feedback at every stage.", image: processDevelopmentImg },
+  { step: "04", title: "Deploy & Optimize", description: "Cloud deployment with ongoing support and continuous performance optimization.", image: processDeployImg },
 ];
 
 const targets = [
@@ -168,15 +172,20 @@ const Services = () => (
           {process.map((item, i) => (
             <motion.div
               key={item.step}
-              className="relative p-6 rounded-xl bg-card border border-border"
+              className="relative rounded-xl bg-card border border-border overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <span className="font-heading text-5xl font-bold text-primary/10">{item.step}</span>
-              <h3 className="font-heading text-lg font-semibold mt-2 mb-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">{item.description}</p>
+              <div className="h-36 overflow-hidden">
+                <img src={item.image} alt={item.title} loading="lazy" width={800} height={512} className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6">
+                <span className="font-heading text-5xl font-bold text-primary/10">{item.step}</span>
+                <h3 className="font-heading text-lg font-semibold mt-2 mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>
