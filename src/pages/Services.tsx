@@ -78,6 +78,15 @@ const targets = [
   "Healthcare and consulting firms",
 ];
 
+const faqs = [
+  { q: "How long does it take to build a custom system?", a: "Timelines vary based on complexity. A basic CRM or dashboard takes 4–6 weeks, while a full-stack intelligent system with AI integrations typically takes 8–12 weeks." },
+  { q: "Do I need technical knowledge to use the system?", a: "Not at all. We build intuitive interfaces designed for non-technical users. We also provide training and documentation so your team can operate everything confidently." },
+  { q: "Can you integrate with tools we already use?", a: "Yes. We specialize in API integrations and can connect your new system with existing tools like Google Workspace, WhatsApp, payment gateways, and third-party CRMs." },
+  { q: "What happens after the system is deployed?", a: "We provide ongoing support, performance monitoring, and optimization. As your business grows, we scale and enhance the system to match new requirements." },
+  { q: "Is my data secure?", a: "Absolutely. We follow industry-standard security practices including encryption, role-based access control, and secure cloud deployment to protect your business data." },
+  { q: "How much does a custom system cost?", a: "Every project is unique. We offer a free consultation to understand your needs and provide a transparent, tailored quote — no hidden charges." },
+];
+
 const Services = () => (
   <main className="pt-24 pb-16">
     <div className="container mx-auto px-4">
