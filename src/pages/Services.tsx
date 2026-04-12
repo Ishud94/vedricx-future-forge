@@ -187,9 +187,8 @@ const Services = () => (
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             </motion.div>
-              <p className="text-sm text-muted-foreground">{item.description}</p>
-            </motion.div>
           ))}
+        </div>
         </div>
       </motion.div>
 
