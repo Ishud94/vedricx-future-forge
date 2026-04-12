@@ -6,6 +6,10 @@ import serviceDataImg from "@/assets/service-data-intelligence.jpg";
 import serviceBusinessImg from "@/assets/service-business-system.jpg";
 import serviceAiImg from "@/assets/service-ai-automation.jpg";
 import serviceCloudImg from "@/assets/service-cloud-deploy.jpg";
+import processRequirementImg from "@/assets/process-requirement.jpg";
+import processDesignImg from "@/assets/process-design.jpg";
+import processDevelopmentImg from "@/assets/process-development.jpg";
+import processDeployImg from "@/assets/process-deploy.jpg";
 
 const services = [
   {
