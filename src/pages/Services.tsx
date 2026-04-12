@@ -189,7 +189,6 @@ const Services = () => (
             </motion.div>
           ))}
         </div>
-        </div>
       </motion.div>
 
       {/* Target Audience */}
