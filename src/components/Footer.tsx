@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import vedricxLogo from "@/assets/vedricx-logo.png";
+const vedricxLogo = "/images/vedricx-logo.png";
 
 const Footer = () => (
   <footer className="bg-surface-dark text-surface-dark-foreground">
