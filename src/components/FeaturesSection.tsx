@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Cpu, BarChart3, Users, Zap, Globe } from "lucide-react";
+import { GraduationCap, Cpu, BarChart3, Zap, Globe, Briefcase } from "lucide-react";
 
 const features = [
   {
@@ -18,9 +18,9 @@ const features = [
     description: "Dashboard-driven insights to track performance and optimize operations.",
   },
   {
-    icon: Users,
-    title: "LMS Platform",
-    description: "Complete learning management with progress tracking, assessments, and certifications.",
+    icon: Briefcase,
+    title: "Industry Partnerships",
+    description: "Training programs aligned with real industry needs and hiring requirements.",
   },
   {
     icon: Zap,

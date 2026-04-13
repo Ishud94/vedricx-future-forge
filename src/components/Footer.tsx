@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import vedricxLogo from "@/assets/vedricx-logo.png";
 
 const Footer = () => (
   <footer className="bg-surface-dark text-surface-dark-foreground">
@@ -6,7 +7,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <img src="/images/vedricx-logo.png" alt="VedricX Global" className="h-10 w-auto" />
+            <img src={vedricxLogo} alt="VedricX Global" className="h-10 w-auto" />
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
             Empowering the next generation of engineers and businesses with cutting-edge education and AI-powered business systems.
