@@ -14,8 +14,8 @@ const benefits = [
   },
   {
     icon: Monitor,
-    title: "Tools Like CATIA & ANSYS",
-    description: "Hands-on experience with the exact software used in top engineering firms worldwide.",
+    title: "Industry-Relevant Tools",
+    description: "Hands-on experience with CATIA, ANSYS, MATLAB — the exact software used in top engineering firms worldwide.",
   },
   {
     icon: Briefcase,

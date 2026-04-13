@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Award, ArrowRight, ChevronDown, ChevronUp, Star, MessageSquare } from "lucide-react";
+import { Clock, Users, Award, ArrowRight, ChevronDown, ChevronUp, Star, MessageSquare, HelpCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import aircraftImg from "@/assets/course-aircraft-design.jpg";
 import cfdImg from "@/assets/course-cfd.jpg";
 import feaImg from "@/assets/course-fea.jpg";
@@ -17,7 +18,7 @@ const programs = [
     software: "CATIA V5 | ANSYS Workbench",
     mode: "Online – Live + Recorded + Project-Based",
     audience: "Engineering Students",
-    fee: "₹14,999",
+    fee: "₹13,000",
     rating: 4.8,
     reviewCount: 124,
     image: aircraftImg,
@@ -44,7 +45,7 @@ const programs = [
     software: "ANSYS Fluent | ICEM CFD | MATLAB",
     mode: "Online – Live + Project-Based",
     audience: "Mechanical, Aerospace, Automotive Students",
-    fee: "₹12,999",
+    fee: "₹15,000",
     rating: 4.7,
     reviewCount: 98,
     image: cfdImg,
@@ -89,6 +90,14 @@ const programs = [
     deliverables: ["Complete FEA Technical Report", "ANSYS Project Files", "Engineering Presentation", "Certificate"],
     skills: ["Structural FEA workflow proficiency", "Linear & nonlinear analysis", "Contact & fatigue analysis", "Engineering judgment & validation", "Industry-style reporting"],
   },
+];
+
+const programFaqs = [
+  { q: "What is included in the course?", a: "Each program includes live instructor-led sessions, recorded lectures for revision, hands-on project work, industry-standard software training (CATIA, ANSYS, MATLAB), downloadable resources, dedicated doubt-clearing sessions, and a certificate of completion." },
+  { q: "Do I need prior experience?", a: "No prior experience is required for our beginner-level programs. Basic engineering knowledge is helpful but not mandatory. Our courses are structured to take you from fundamentals to advanced concepts step by step." },
+  { q: "What tools will I learn?", a: "Depending on the program, you'll gain hands-on experience with industry-standard tools like CATIA V5, ANSYS Workbench, ANSYS Fluent, ICEM CFD, and MATLAB — the same tools used by top engineering firms worldwide." },
+  { q: "Will I get a certificate?", a: "Yes! Upon successful completion of the program and capstone project, you'll receive an industry-recognized certificate from VedricX Global that validates your skills to potential employers." },
+  { q: "How can I enroll or contact?", a: "You can reach out to us via our Contact page, WhatsApp, or email at info@vedricxglobal.com. Our team will guide you through the enrollment process, answer any questions, and help you choose the right program." },
 ];
 
 const StarRating = ({ rating, count }: { rating: number; count: number }) => (
@@ -269,17 +278,37 @@ const Programs = () => {
                         <MessageSquare className="mr-2 h-4 w-4" /> Contact Us
                       </Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline">
-                      <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
-                        Get Consultation <ArrowRight className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
                   </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* FAQ Section */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center justify-center gap-3 mb-10">
+            <HelpCircle className="h-6 w-6 text-primary" />
+            <h2 className="font-heading text-3xl md:text-4xl font-bold">
+              Frequently Asked <span className="text-gradient">Questions</span>
+            </h2>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-3">
+              {programFaqs.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl border border-border bg-card px-6">
+                  <AccordionTrigger className="text-left font-medium hover:no-underline">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </motion.div>
       </div>
     </main>
   );
