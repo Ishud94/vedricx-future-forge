@@ -44,7 +44,12 @@ const Footer = () => (
   </li>
 
   <li>
-    <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
+    <a
+      href="https://wa.me/919999999999"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:opacity-100 transition-opacity"
+    >
       WhatsApp
     </a>
   </li>
@@ -56,7 +61,10 @@ const Footer = () => (
   </li>
 
   <li>
-    <a href="mailto:info@vedricxglobal.com" className="hover:opacity-100 transition-opacity">
+    <a
+      href="mailto:info@vedricxglobal.com"
+      className="hover:opacity-100 transition-opacity"
+    >
       info@vedricxglobal.com
     </a>
   </li>
