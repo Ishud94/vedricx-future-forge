@@ -12,7 +12,6 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-<<<<<<< HEAD
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setLoading(true);
@@ -57,18 +56,6 @@ const Contact = () => {
 
   setLoading(false);
 };
-=======
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
-      setForm({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
-      setLoading(false);
-    }, 1000);
-  };
-
->>>>>>> c9e07404a4ab60532c920cf6f8c4b02058e5d061
   return (
     <main className="pt-24 pb-16">
       <div className="container mx-auto px-4">
