@@ -36,23 +36,16 @@ const Footer = () => (
           <h4 className="font-heading font-semibold mb-4">Connect</h4>
           <ul className="space-y-2 text-sm opacity-70">
             <li><Link to="/contact" className="hover:opacity-100 transition-opacity">Contact Us</Link></li>
-<<<<<<< HEAD
             <li><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">WhatsApp</a></li>
-=======
             <li><a href="tel:+918439120370" className="hover:opacity-100 transition-opacity">+91 8439120370</a></li>
->>>>>>> c9e07404a4ab60532c920cf6f8c4b02058e5d061
             <li><a href="mailto:info@vedricxglobal.com" className="hover:opacity-100 transition-opacity">info@vedricxglobal.com</a></li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-border/20 mt-12 pt-8 text-center text-sm opacity-50">
-<<<<<<< HEAD
-        © {new Date().getFullYear()} VedricX Global. All rights reserved.
-=======
-        <p>© {new Date().getFullYear()} VedricX Global. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} VedricX Global. All rights reserved.</p>
         <p className="mt-2">LLP Identification No. ACU-3822</p>
->>>>>>> c9e07404a4ab60532c920cf6f8c4b02058e5d061
       </div>
     </div>
   </footer>
