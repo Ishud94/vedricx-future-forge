@@ -139,20 +139,6 @@ const Contact = () => {
               <h3 className="font-heading text-xl font-semibold mb-6">Other Ways to Reach Us</h3>
               <div className="space-y-5">
                 <a
-                  href="https://wa.me/919999999999"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-accent/30 transition-colors"
-                >
-                  <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <MessageSquare className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">WhatsApp</div>
-                    <div className="text-sm text-muted-foreground">Chat with us instantly</div>
-                  </div>
-                </a>
-                <a
                   href="mailto:info@vedricxglobal.com"
                   className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
                 >
@@ -179,7 +165,7 @@ const Contact = () => {
             <div className="rounded-xl bg-card border border-border p-6">
               <h4 className="font-heading font-semibold mb-2">Response Time</h4>
               <p className="text-sm text-muted-foreground">
-                We typically respond within 2–4 hours during business hours. For urgent inquiries, reach out via WhatsApp.
+                We typically respond within 2–4 hours during business hours. For urgent inquiries, call us directly.
               </p>
             </div>
           </motion.div>
