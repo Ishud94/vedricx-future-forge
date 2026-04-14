@@ -105,7 +105,31 @@ const Contact = () => {
               <h3 className="font-heading text-xl font-semibold mb-6">Other Ways to Reach Us</h3>
               <div className="space-y-5">
                 <a
-                  href="https://wa.me/919999999999"
+                  href="tel:+918439120370"
+                  className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
+                >
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-foreground">Phone</div>
+                    <div className="text-sm text-muted-foreground">+91 8439120370</div>
+                  </div>
+                </a>
+                <a
+                  href="mailto:technical.head@vedricxglobal.com"
+                  className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
+                >
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-foreground">Email</div>
+                    <div className="text-sm text-muted-foreground">technical.head@vedricxglobal.com</div>
+                  </div>
+                </a>
+                <a
+                  href="https://wa.me/918439120370"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-accent/30 transition-colors"
@@ -118,27 +142,6 @@ const Contact = () => {
                     <div className="text-sm text-muted-foreground">Chat with us instantly</div>
                   </div>
                 </a>
-                <a
-                  href="mailto:info@vedricxglobal.com"
-                  className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
-                >
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">Email</div>
-                    <div className="text-sm text-muted-foreground">info@vedricxglobal.com</div>
-                  </div>
-                </a>
-                <div className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">Phone</div>
-                    <div className="text-sm text-muted-foreground">Contact us for a consultation</div>
-                  </div>
-                </div>
               </div>
             </div>
 
