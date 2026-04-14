@@ -139,7 +139,6 @@ const Contact = () => {
               <h3 className="font-heading text-xl font-semibold mb-6">Other Ways to Reach Us</h3>
               <div className="space-y-5">
                 <a
-<<<<<<< HEAD
                   href="https://wa.me/919999999999"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -151,17 +150,6 @@ const Contact = () => {
                   <div>
                     <div className="font-medium text-foreground">WhatsApp</div>
                     <div className="text-sm text-muted-foreground">Chat with us instantly</div>
-=======
-                  href="tel:+918439120370"
-                  className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
-                >
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">Phone</div>
-                    <div className="text-sm text-muted-foreground">+91 8439120370</div>
->>>>>>> c9e07404a4ab60532c920cf6f8c4b02058e5d061
                   </div>
                 </a>
                 <a
@@ -176,7 +164,6 @@ const Contact = () => {
                     <div className="text-sm text-muted-foreground">info@vedricxglobal.com</div>
                   </div>
                 </a>
-<<<<<<< HEAD
                 <div className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Phone className="h-5 w-5 text-primary" />
@@ -186,8 +173,6 @@ const Contact = () => {
                     <div className="text-sm text-muted-foreground">Contact us for a consultation</div>
                   </div>
                 </div>
-=======
->>>>>>> c9e07404a4ab60532c920cf6f8c4b02058e5d061
               </div>
             </div>
 
