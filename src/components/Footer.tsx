@@ -69,8 +69,7 @@ const Footer = () => (
     </a>
   </li>
 </ul>
-          </ul>
-        </div>
+                 </div>
       </div>
 
       <div className="border-t border-border/20 mt-12 pt-8 text-center text-sm opacity-50">
