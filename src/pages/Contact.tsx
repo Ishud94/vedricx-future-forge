@@ -12,6 +12,7 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
   const [loading, setLoading] = useState(false);
 
+<<<<<<< HEAD
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setLoading(true);
@@ -56,6 +57,18 @@ const Contact = () => {
 
   setLoading(false);
 };
+=======
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
+      setForm({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
+      setLoading(false);
+    }, 1000);
+  };
+
+>>>>>>> c9e07404a4ab60532c920cf6f8c4b02058e5d061
   return (
     <main className="pt-24 pb-16">
       <div className="container mx-auto px-4">
@@ -139,6 +152,7 @@ const Contact = () => {
               <h3 className="font-heading text-xl font-semibold mb-6">Other Ways to Reach Us</h3>
               <div className="space-y-5">
                 <a
+<<<<<<< HEAD
                   href="https://wa.me/919999999999"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -150,6 +164,17 @@ const Contact = () => {
                   <div>
                     <div className="font-medium text-foreground">WhatsApp</div>
                     <div className="text-sm text-muted-foreground">Chat with us instantly</div>
+=======
+                  href="tel:+918439120370"
+                  className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
+                >
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-foreground">Phone</div>
+                    <div className="text-sm text-muted-foreground">+91 8439120370</div>
+>>>>>>> c9e07404a4ab60532c920cf6f8c4b02058e5d061
                   </div>
                 </a>
                 <a
@@ -164,6 +189,7 @@ const Contact = () => {
                     <div className="text-sm text-muted-foreground">info@vedricxglobal.com</div>
                   </div>
                 </a>
+<<<<<<< HEAD
                 <div className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Phone className="h-5 w-5 text-primary" />
@@ -173,6 +199,8 @@ const Contact = () => {
                     <div className="text-sm text-muted-foreground">Contact us for a consultation</div>
                   </div>
                 </div>
+=======
+>>>>>>> c9e07404a4ab60532c920cf6f8c4b02058e5d061
               </div>
             </div>
 
