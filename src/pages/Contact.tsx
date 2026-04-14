@@ -117,7 +117,7 @@ const Contact = () => {
                   </div>
                 </a>
                 <a
-                  href="mailto:technical.head@vedricxglobal.com"
+                  href="mailto:info@vedricxglobal.com"
                   className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
                 >
                   <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -125,21 +125,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Email</div>
-                    <div className="text-sm text-muted-foreground">technical.head@vedricxglobal.com</div>
-                  </div>
-                </a>
-                <a
-                  href="https://wa.me/918439120370"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:border-accent/30 transition-colors"
-                >
-                  <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <MessageSquare className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">WhatsApp</div>
-                    <div className="text-sm text-muted-foreground">Chat with us instantly</div>
+                    <div className="text-sm text-muted-foreground">info@vedricxglobal.com</div>
                   </div>
                 </a>
               </div>
