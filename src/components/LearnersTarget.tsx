@@ -1,14 +1,22 @@
 import { useEffect, useRef } from "react";
+import logoTata from "@/assets/logo-tata.jpg";
+import logoMahindra from "@/assets/logo-mahindra.jpg";
+import logoOla from "@/assets/logo-ola.png";
+import logoHcl from "@/assets/logo-hcl.png";
+import logoWipro from "@/assets/logo-wipro.png";
+import logoInfosys from "@/assets/logo-infosys.png";
+import logoLt from "@/assets/logo-lt.jpg";
+import logoReliance from "@/assets/logo-reliance.jpg";
 
 const companies = [
-  { name: "Tata", color: "hsl(221, 83%, 53%)" },
-  { name: "Mahindra", color: "hsl(0, 72%, 51%)" },
-  { name: "Ola", color: "hsl(145, 63%, 42%)" },
-  { name: "HCL", color: "hsl(221, 83%, 53%)" },
-  { name: "Wipro", color: "hsl(262, 52%, 47%)" },
-  { name: "Infosys", color: "hsl(199, 89%, 48%)" },
-  { name: "L&T", color: "hsl(25, 95%, 53%)" },
-  { name: "Reliance", color: "hsl(221, 83%, 40%)" },
+  { name: "Tata", logo: logoTata },
+  { name: "Mahindra", logo: logoMahindra },
+  { name: "Ola", logo: logoOla },
+  { name: "HCL", logo: logoHcl },
+  { name: "Wipro", logo: logoWipro },
+  { name: "Infosys", logo: logoInfosys },
+  { name: "L&T", logo: logoLt },
+  { name: "Reliance", logo: logoReliance },
 ];
 
 const LearnersTarget = () => {
@@ -71,7 +79,7 @@ const LearnersTarget = () => {
               {companies.map((company, i) => {
                 const angle = (360 / companies.length) * i - 90;
                 const rad = (angle * Math.PI) / 180;
-                const radius = 42; // percentage from center
+                const radius = 42;
                 const x = 50 + radius * Math.cos(rad);
                 const y = 50 + radius * Math.sin(rad);
 
@@ -82,16 +90,14 @@ const LearnersTarget = () => {
                     style={{
                       left: `${x}%`,
                       top: `${y}%`,
-                      animationDelay: `${i * 0.1}s`,
                     }}
                   >
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-card border border-border/60 shadow-md flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-primary/30 cursor-default">
-                      <span
-                        className="font-bold text-xs sm:text-sm transition-colors duration-300"
-                        style={{ color: company.color }}
-                      >
-                        {company.name}
-                      </span>
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-border/60 shadow-md flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-primary/30 cursor-default p-2">
+                      <img
+                        src={company.logo}
+                        alt={company.name}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
                 );
