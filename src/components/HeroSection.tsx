@@ -2,14 +2,59 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, GraduationCap, Cpu } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
+
+const floatingAnimation = (duration: number, y: number = 15) => ({
+  y: [-y, y, -y],
+  transition: { duration, repeat: Infinity, ease: "easeInOut" },
+});
+
+const glowPulse = (duration: number) => ({
+  opacity: [0.4, 0.8, 0.4],
+  transition: { duration, repeat: Infinity, ease: "easeInOut" },
+});
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl" />
+    {/* Animated Background Image */}
+    <motion.div
+      className="absolute inset-0 z-0"
+      initial={{ scale: 1.1, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
+    >
+      <img
+        src={heroBg}
+        alt=""
+        width={1920}
+        height={1080}
+        className="w-full h-full object-cover object-center"
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/90" />
+    </motion.div>
+
+    {/* Animated floating glow orbs */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+      <motion.div
+        className="absolute top-1/4 left-[10%] w-32 h-32 rounded-full bg-primary/20 blur-3xl"
+        animate={{ ...floatingAnimation(6, 20), ...glowPulse(4) }}
+      />
+      <motion.div
+        className="absolute top-1/3 right-[15%] w-24 h-24 rounded-full bg-accent/20 blur-2xl"
+        animate={{ ...floatingAnimation(8, 25), ...glowPulse(5) }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 left-[20%] w-20 h-20 rounded-full bg-primary/15 blur-2xl"
+        animate={floatingAnimation(7, 18)}
+      />
+      <motion.div
+        className="absolute bottom-1/3 right-[25%] w-16 h-16 rounded-full bg-accent/15 blur-xl"
+        animate={floatingAnimation(5, 12)}
+      />
     </div>
 
+    {/* Content */}
     <div className="container mx-auto px-4 relative z-10">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
@@ -17,7 +62,7 @@ const HeroSection = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted-foreground mb-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 backdrop-blur-sm px-4 py-1.5 text-sm text-muted-foreground mb-8">
             <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
             Engineering Education & AI-Powered Business Systems
           </div>
