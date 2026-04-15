@@ -47,14 +47,11 @@ const LearnersTarget = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left Side */}
           <div className="lg:w-5/12 text-center lg:text-left">
-            <span className="inline-block text-sm font-semibold tracking-widest uppercase text-primary mb-3">
-              Trusted Partners
-            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
               Our Learners Target
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
-              Our apprenticeship programs prepare learners for roles across core
+              Our industrial training programs prepare learners for roles across core
               engineering organizations — connecting talent with India's top
               employers.
             </p>
