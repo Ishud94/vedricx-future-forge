@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Instagram, Linkedin } from "lucide-react";
 const vedricxLogo = "/images/vedricx-logo.png";
 
 const Footer = () => (
@@ -39,6 +40,26 @@ const Footer = () => (
             <li><a href="tel:+918439120370" className="hover:opacity-100 transition-opacity">+91 8439120370</a></li>
             <li><a href="mailto:info@vedricxglobal.com" className="hover:opacity-100 transition-opacity">info@vedricxglobal.com</a></li>
           </ul>
+          <div className="flex items-center gap-3 mt-4">
+            <a
+              href="https://www.instagram.com/vedricx_global?igsh=cThuMjU1dnF3d3ky"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+              className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/vedricxglobal/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on LinkedIn"
+              className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </div>
 
