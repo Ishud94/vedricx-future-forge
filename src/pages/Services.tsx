@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Bot, BarChart3, Workflow, Database, Shield, Layers, ArrowRight, CheckCircle, HelpCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import serviceDataImg from "@/assets/service-data-intelligence.jpg";
 import serviceBusinessImg from "@/assets/service-business-system.jpg";
 import serviceAiImg from "@/assets/service-ai-automation.jpg";
@@ -242,6 +243,9 @@ const Services = () => (
           </Accordion>
         </div>
       </motion.div>
+
+      {/* Testimonials */}
+      <TestimonialsSection />
 
       {/* CTA */}
       <div className="text-center">
