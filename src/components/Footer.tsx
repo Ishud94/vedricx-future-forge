@@ -42,7 +42,7 @@ const Footer = () => (
           </ul>
           <div className="flex items-center gap-3 mt-4">
             <a
-              href="https://www.instagram.com/vedricx_global?igsh=cThuMjU1dnF3d3ky"
+              href="https://www.instagram.com/vedricx_global/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow us on Instagram"
