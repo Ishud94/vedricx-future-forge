@@ -6,10 +6,29 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import PhoneInput from "@/components/PhoneInput";
+import CountrySelect from "@/components/CountrySelect";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const TITLES = ["Mr", "Mrs", "Miss", "Prefer not to say"] as const;
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
+  const [form, setForm] = useState({
+    title: "",
+    name: "",
+    email: "",
+    country: "IN",
+    countryCode: "+91-IN",
+    phone: "",
+    interest: "",
+    message: "",
+  });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -32,12 +51,14 @@ const Contact = () => {
       });
 
       setForm({
+        title: "",
         name: "",
         email: "",
+        country: "IN",
         countryCode: "+91-IN",
         phone: "",
         interest: "",
-        message: ""
+        message: "",
       });
 
     } else {
@@ -80,14 +101,45 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Name</label>
-                  <Input required maxLength={100} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" />
+              <div>
+                <label className="text-sm font-medium text-foreground mb-1.5 block">Name</label>
+                <div className="grid grid-cols-[110px_1fr] gap-2">
+                  <Select
+                    value={form.title}
+                    onValueChange={(v) => setForm({ ...form, title: v })}
+                  >
+                    <SelectTrigger aria-label="Title">
+                      <SelectValue placeholder="Title" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {TITLES.map((t) => (
+                        <SelectItem key={t} value={t}>
+                          {t}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Input
+                    required
+                    maxLength={100}
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    placeholder="Your name"
+                  />
                 </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
                   <Input required type="email" maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" />
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-1.5 block">Country</label>
+                  <CountrySelect
+                    value={form.country}
+                    onChange={(code) => setForm({ ...form, country: code })}
+                    required
+                  />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
