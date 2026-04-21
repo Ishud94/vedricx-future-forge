@@ -6,10 +6,29 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import PhoneInput from "@/components/PhoneInput";
+import CountrySelect from "@/components/CountrySelect";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const TITLES = ["Mr", "Mrs", "Miss", "Prefer not to say"] as const;
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", countryCode: "+91-IN", phone: "", interest: "", message: "" });
+  const [form, setForm] = useState({
+    title: "",
+    name: "",
+    email: "",
+    country: "IN",
+    countryCode: "+91-IN",
+    phone: "",
+    interest: "",
+    message: "",
+  });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
