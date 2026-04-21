@@ -128,19 +128,9 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
-                  <Input required type="email" maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Country</label>
-                  <CountrySelect
-                    value={form.country}
-                    onChange={(code) => setForm({ ...form, country: code })}
-                    required
-                  />
-                </div>
+              <div>
+                <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
+                <Input required type="email" maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
