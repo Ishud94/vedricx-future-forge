@@ -310,8 +310,20 @@ const Programs = () => {
                     )}
                   </div>
 
-                  <div className="flex-shrink-0 flex flex-col gap-3">
+                  <div className="flex-shrink-0 flex flex-col gap-3 lg:w-56">
                     <Button asChild size="lg">
+                      <Link to="/contact">
+                        <MessageSquare className="mr-2 h-4 w-4" /> Enroll Now
+                      </Link>
+                    </Button>
+                    {program.brochure && (
+                      <Button asChild size="lg" variant="outline">
+                        <a href={program.brochure} target="_blank" rel="noopener noreferrer" download>
+                          <Download className="mr-2 h-4 w-4" /> Download Brochure
+                        </a>
+                      </Button>
+                    )}
+                    <Button asChild size="lg" variant="ghost">
                       <Link to="/contact">
                         <MessageSquare className="mr-2 h-4 w-4" /> Contact Us
                       </Link>
