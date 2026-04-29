@@ -200,12 +200,22 @@ const Programs = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+
+                {/* Limited-time discount badge */}
+                <div className="absolute top-4 left-4 flex items-center gap-1.5 rounded-full bg-red-600 text-white px-3 py-1.5 text-xs font-bold shadow-lg animate-pulse">
+                  <Flame className="h-3.5 w-3.5" />
+                  50% OFF — Limited Time (3 Days Only)
+                </div>
+
                 <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between">
                   <div>
                     <StarRating rating={program.rating} count={program.reviewCount} />
                   </div>
-                  <div className="rounded-lg bg-primary px-4 py-2 text-primary-foreground font-heading font-bold text-lg">
-                    {program.fee}
+                  <div className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-heading font-bold">
+                    <span className="text-xs line-through opacity-70 font-normal">
+                      ₹{(parseInt(program.fee.replace(/[^\d]/g, ""), 10) * 2).toLocaleString("en-IN")}
+                    </span>
+                    <span className="text-lg">{program.fee}</span>
                   </div>
                 </div>
               </div>
