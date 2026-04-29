@@ -91,6 +91,33 @@ const programs = [
     deliverables: ["Complete FEA Technical Report", "ANSYS Project Files", "Engineering Presentation", "Certificate"],
     skills: ["Structural FEA workflow proficiency", "Linear & nonlinear analysis", "Contact & fatigue analysis", "Engineering judgment & validation", "Industry-style reporting"],
   },
+  {
+    title: "Mechanical Design Industry Oriented Program",
+    subtitle: "From Engineering Drawings to Industry-Ready CAD Portfolio",
+    description: "Develop into an industry-ready mechanical design engineer by combining engineering drawing fundamentals with practical SolidWorks/CATIA modeling, GD&T, assembly design, sheet metal, and documentation. Build a professional CAD portfolio suitable for entry-level design engineering roles.",
+    duration: "12 Weeks",
+    level: "Beginner to Intermediate",
+    software: "SolidWorks | CATIA V5",
+    mode: "Online – Live + Project-Based",
+    audience: "Mechanical & Production Engineering Students",
+    fee: "₹12,000",
+    rating: 4.9,
+    reviewCount: 142,
+    image: mechanicalImg,
+    brochure: "/brochures/mechanical-design-program.pdf",
+    roles: ["Mechanical Design Engineer (Trainee)", "CAD Design Engineer", "Product Design Engineer (Junior)", "Drafting & GD&T Engineer"],
+    modules: [
+      { week: "Module 1", title: "Engineering Drawing Mastery", topics: ["Orthographic & isometric projections", "First vs Third angle projection", "Section & detail views", "Dimensioning rules (ISO / ASME)", "Limits, fits & tolerances", "Reverse engineer drawing → 3D model"] },
+      { week: "Module 2", title: "Parametric & Feature-Based Modeling", topics: ["Design intent & fully defined sketches", "Multi-body modeling & configurations", "Advanced features (Loft, Sweep, Shell, Draft)", "Surface modeling basics", "Projects: Mounting bracket, flange, shaft, housing"] },
+      { week: "Module 3", title: "GD&T + Tolerance Engineering", topics: ["GD&T symbols & interpretation", "Datums & feature control frames", "Position, flatness, parallelism, perpendicularity", "Fit calculation & tolerance stack-up", "Apply GD&T on shaft-bearing system"] },
+      { week: "Module 4", title: "Sheet Metal, Weldments & Fabrication", topics: ["Bend allowance & K-factor", "Flat pattern export", "Weld symbols & structural frames", "Cut list documentation", "Project: Industrial electrical enclosure"] },
+      { week: "Module 5", title: "Assembly Design & BOM Strategy", topics: ["Bottom-up & Top-down modeling", "Mates, sub-assemblies & component library", "Interference detection & exploded view", "Bill of Materials generation", "Project: Two-stage Industrial Gearbox"] },
+      { week: "Module 6", title: "Advanced Assembly & Motion", topics: ["Standard & advanced mates (Limit, Width)", "Sub-assembly structure management", "Interference & clearance verification", "BOM with balloons & assembly drawings", "Basic motion study & animation export"] },
+      { week: "Module 7", title: "Capstone Industry Project", topics: ["Choose: Automotive Suspension / Hydraulic Press / Go-Kart Frame", "Complete CAD modeling & assembly", "GD&T + manufacturing drawings + BOM", "Basic static simulation & validation", "15-slide technical presentation"] },
+    ],
+    deliverables: ["10+ Fully Defined 3D Part Models", "3 Complete Mechanical Assemblies", "5+ Manufacturing Drawings", "GD&T Applied Drawing Set", "Capstone Project + Presentation", "Industry-Recognized Certificate"],
+    skills: ["Engineering drawing interpretation", "Parametric 3D modeling (SolidWorks/CATIA)", "GD&T & tolerance stack-up", "Sheet metal & weldment design", "Assembly modeling & BOM creation", "Professional CAD portfolio building"],
+  },
 ];
 
 const programFaqs = [
