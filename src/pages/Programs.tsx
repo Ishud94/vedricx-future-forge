@@ -2,11 +2,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Award, ArrowRight, ChevronDown, ChevronUp, Star, MessageSquare, HelpCircle } from "lucide-react";
+import { Clock, Users, Award, ArrowRight, ChevronDown, ChevronUp, Star, MessageSquare, HelpCircle, Download, Flame } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import aircraftImg from "@/assets/course-aircraft-design.jpg";
 import cfdImg from "@/assets/course-cfd.jpg";
 import feaImg from "@/assets/course-fea.jpg";
+import mechanicalImg from "@/assets/course-mechanical-design.jpg";
 
 const programs = [
   {
