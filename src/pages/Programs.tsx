@@ -319,13 +319,6 @@ const Programs = () => {
                         <MessageSquare className="mr-2 h-4 w-4" /> Enroll Now
                       </Link>
                     </Button>
-                    {program.brochure && (
-                      <Button asChild size="lg" variant="outline">
-                        <a href={program.brochure} target="_blank" rel="noopener noreferrer" download>
-                          <Download className="mr-2 h-4 w-4" /> Download Brochure
-                        </a>
-                      </Button>
-                    )}
                     <Button asChild size="lg" variant="ghost">
                       <Link to="/contact">
                         <MessageSquare className="mr-2 h-4 w-4" /> Contact Us
