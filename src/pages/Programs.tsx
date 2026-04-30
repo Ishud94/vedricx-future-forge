@@ -319,11 +319,18 @@ const Programs = () => {
                         <MessageSquare className="mr-2 h-4 w-4" /> Enroll Now
                       </Link>
                     </Button>
-                    <Button asChild size="lg" variant="ghost">
-                      <Link to="/contact">
-                        <MessageSquare className="mr-2 h-4 w-4" /> Contact Us
+                    <Button
+                      asChild
+                      size="lg"
+                      className="relative bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white hover:opacity-95 shadow-lg shadow-orange-500/30 ring-2 ring-amber-300/60 animate-pulse"
+                    >
+                      <Link to={`/contact?demo=1&program=${encodeURIComponent(program.title)}`}>
+                        <Flame className="mr-2 h-4 w-4" /> Get a Free Demo Session
                       </Link>
                     </Button>
+                    <span className="text-[11px] text-center font-semibold text-orange-600 uppercase tracking-wider">
+                      ✨ Free • No Credit Card • 30 Min
+                    </span>
                   </div>
                 </div>
               </div>
