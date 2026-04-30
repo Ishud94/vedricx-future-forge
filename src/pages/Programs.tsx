@@ -314,11 +314,6 @@ const Programs = () => {
                   </div>
 
                   <div className="flex-shrink-0 flex flex-col gap-3 lg:w-56">
-                    <Button asChild size="lg">
-                      <Link to="/contact">
-                        <MessageSquare className="mr-2 h-4 w-4" /> Enroll Now
-                      </Link>
-                    </Button>
                     <Button
                       asChild
                       size="lg"
@@ -328,9 +323,6 @@ const Programs = () => {
                         <Flame className="mr-2 h-4 w-4" /> Get a Free Demo Session
                       </Link>
                     </Button>
-                    <span className="text-[11px] text-center font-semibold text-orange-600 uppercase tracking-wider">
-                      ✨ Free • No Credit Card • 30 Min
-                    </span>
                   </div>
                 </div>
               </div>
